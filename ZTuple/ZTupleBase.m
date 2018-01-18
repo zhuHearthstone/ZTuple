@@ -108,13 +108,10 @@ static unsigned short tupleCountWithObject(ZTupleBase *obj) {
 }
 
 - (BOOL)isEqual:(ZTupleBase *)other {
-    if (![other isKindOfClass:ZTupleBase.class]) {
-        return NO;
-    }
-    if (self == other) {
+    if (other == self) {
         return YES;
     }
-    if (self.class != other.class) {
+    if (other.class != self.class) {
         return NO;
     }
     for (int i = 0; i < tupleCountWithObject(self); ++i) {
